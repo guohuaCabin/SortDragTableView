@@ -44,7 +44,7 @@
 -(UIView *)lineF:(CGRect)frame{
     UIView *line=[[UIView alloc]init];
     line.frame=frame;
-    line.backgroundColor=[UIColor grayColor];
+    line.backgroundColor=[UIColor groupTableViewBackgroundColor];
     return line;
 }
 

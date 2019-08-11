@@ -63,7 +63,7 @@
 {
     for (NSInteger i = 0; i<30; i++) {
         
-        NSString *obj = [NSString stringWithFormat:@"GH_%li",i];
+        NSString *obj = [NSString stringWithFormat:@"gh_%li",i];
         [self.dataArray addObject:obj];
         
     }
@@ -159,7 +159,6 @@
     
     [self.view addSubview:self.tableView];
     
-    
 }
 
 #pragma mark - ****************  Action
@@ -222,7 +221,7 @@
     }
     //触发长按手势的cell
     SortDragCell * cell = (SortDragCell*)[self.tableView cellForRowAtIndexPath:self.dragingIndexPath];
-    cell.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.3];
+    cell.backgroundColor = [UIColor colorWithRed:53/255.f green:115/255.f blue:250/255.f alpha:0.3];
     cell.isMoving = YES;
     
 }
@@ -331,6 +330,7 @@
     SortDragCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierID];
     if (nil == cell) {
         cell = [[SortDragCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifierID];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     cell.delegate = self;
